@@ -1,0 +1,32 @@
+
+<html>
+<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<body>
+
+<div ng-app="urlShortApp" ng-controller="urlShortCtrl" class="main-block">
+
+<input type="text" ng-model="fullUrl" class="url_input" placeholder="Type in your url ex: google.com (or) copy paste your url"><br><br>
+<button ng-click="shortenUrl()">Shorten Url</button><br>
+
+
+<p>Shortend Url : <a href="{{shortendUrl}}" target="_blank">{{shortendUrl}}</a></p>
+
+</div>
+
+<script>
+var app = angular.module('urlShortApp', []);
+app.controller('urlShortCtrl', function($scope,$http) {
+    $scope.fullUrl = "";
+    $scope.shortendUrl = "";
+    $scope.shortenUrl = function(){
+    	get_url = '/shorten?url='+$scope.fullUrl;
+    	console.log(get_url);
+    	$http.get(get_url).success(function(data){
+    		$scope.shortendUrl = data.shorturl;
+    	});
+    }
+});
+</script>
+
+</body>
+</html>
