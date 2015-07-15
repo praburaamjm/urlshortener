@@ -2,14 +2,14 @@
 
 Normal Usage
 
-Go to the application home page and key in the url and press "Shorten Url"
+	Go to the application home page and key in the url and press "Shorten Url"
 
 
 Service Usage
 
 1. To shorten a url
 
-GET /shorten?url=<YOUR-URL>
+	GET /shorten?url=<YOUR-URL>
 
 	Sample:
 		GET HOSTNAME/shorten?url=google.com
@@ -25,7 +25,7 @@ GET /shorten?url=<YOUR-URL>
 
 2. To expand a shortened url
 
-GET /expand?shorturl=<YOUR-SHORT-URL>
+	GET /expand?shorturl=<YOUR-SHORT-URL>
 
 	Sample:
 		GET HOSTNAME/expand?shorturl=http://localhost:3000/dbi1hy
